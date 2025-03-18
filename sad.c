@@ -23,12 +23,8 @@ int sadini(struct sadarr *arr, size_t sz, size_t t) {
         return SADE_NON;
 }
 
-// could just do the manip, save the comparison
 void sadset(struct sadarr *arr, void *n, int i) {
-        if (i < 0 || i >= arr->sz) {
-                i = arr->sz % (arr->sz + i);
-        }
-
+        i = arr->sz % (arr->sz + i);
         memmove(&(arr->dat[arr->t * i]), n, arr->t);
 }
 
