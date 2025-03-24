@@ -132,6 +132,34 @@ int sadrem(struct sadarr *arr);
  */
 int sadins(struct sadarr *arr, void *n, int i);
 
-int sadgint(struct sadarr arr, int i, int *got);
+/*
+ *   Gets
+ *
+ *   All remaining functions handle getting data out of the array for different
+ *   datatypes. Each one follows the same structure.
+ *
+ *   INPUT  : Sad array structure. TYPE pointer for data to get. Index of data
+ *            to get.
+ *   OUTPUT : `SADE_MEM` - Function called does not match with array's type.
+ *            `SADE_NON` - Data got.
+ *
+ *   DESC.  : Fetches requested data, converting it to the correct type.
+ */
+
+int sadgeti(struct sadarr arr, int *got, int i);
+
+int sadgetli(struct sadarr arr, long int *got, int i);
+
+int sadgetlli(struct sadarr arr, long long int *got, int i);
+
+int sadgetsi(struct sadarr arr, short int *got, int i);
+
+int sadgetf(struct sadarr arr, float *got, int i);
+
+int sadgetd(struct sadarr arr, double *got, int i);
+
+int sadgetld(struct sadarr arr, long double *got, int i);
+
+int sadgetc(struct sadarr arr, char *got, int i);
 
 #endif
