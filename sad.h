@@ -132,4 +132,6 @@ int sadrem(struct sadarr *arr);
  */
 int sadins(struct sadarr *arr, void *n, int i);
 
+int sadgint(struct sadarr arr, int i, int *got);
+
 #endif

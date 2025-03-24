@@ -67,3 +67,14 @@ int sadins(struct sadarr *arr, void *n, int i) {
         memmove(&(d[b]), n, arr->t);
         return SADE_NON;
 }
+
+int sadgint(struct sadarr arr, int i, int *got) {
+        if (arr.t != SADT_INT) {
+                return SADE_MEM;
+        }
+
+        i = arr->sz % (arr->sz + i);
+        *got = arr.dat[i];
+        return SAD_NON;
+}
+
